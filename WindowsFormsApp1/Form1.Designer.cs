@@ -89,7 +89,7 @@
             this.listBox1.Location = new System.Drawing.Point(13, 43);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1.Size = new System.Drawing.Size(586, 82);
+            this.listBox1.Size = new System.Drawing.Size(586, 121);
             this.listBox1.TabIndex = 3;
             // 
             // groupBox1
@@ -120,14 +120,14 @@
             this.groupBox3.Controls.Add(this.listBox1);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(605, 160);
+            this.groupBox3.Size = new System.Drawing.Size(605, 200);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(13, 130);
+            this.checkBox1.Location = new System.Drawing.Point(13, 176);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(110, 17);
             this.checkBox1.TabIndex = 9;
@@ -151,13 +151,13 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Location = new System.Drawing.Point(623, 120);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(174, 59);
+            this.groupBox2.Size = new System.Drawing.Size(174, 92);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             // 
             // BTSchliessen
             // 
-            this.BTSchliessen.Location = new System.Drawing.Point(6, 19);
+            this.BTSchliessen.Location = new System.Drawing.Point(7, 218);
             this.BTSchliessen.Name = "BTSchliessen";
             this.BTSchliessen.Size = new System.Drawing.Size(160, 23);
             this.BTSchliessen.TabIndex = 0;
@@ -168,16 +168,16 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(13, 16);
+            this.listBox2.Location = new System.Drawing.Point(13, 19);
             this.listBox2.Name = "listBox2";
             this.listBox2.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox2.Size = new System.Drawing.Size(586, 251);
+            this.listBox2.Size = new System.Drawing.Size(586, 199);
             this.listBox2.TabIndex = 9;
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(13, 273);
+            this.checkBox2.Location = new System.Drawing.Point(13, 224);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(110, 17);
             this.checkBox2.TabIndex = 10;
@@ -188,9 +188,9 @@
             // 
             this.groupBox4.Controls.Add(this.listBox2);
             this.groupBox4.Controls.Add(this.checkBox2);
-            this.groupBox4.Location = new System.Drawing.Point(12, 178);
+            this.groupBox4.Location = new System.Drawing.Point(12, 211);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(605, 298);
+            this.groupBox4.Size = new System.Drawing.Size(605, 250);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             // 
@@ -199,7 +199,7 @@
             this.groupBox5.Controls.Add(this.BTSchliessen);
             this.groupBox5.Location = new System.Drawing.Point(622, 211);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(166, 104);
+            this.groupBox5.Size = new System.Drawing.Size(175, 250);
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "groupBox5";
