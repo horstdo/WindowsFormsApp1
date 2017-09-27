@@ -11,7 +11,6 @@ using System.Threading;
 using System.Security.Principal;
 using Domino;
 
-
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
@@ -103,8 +102,8 @@ namespace WindowsFormsApp1
 
             listBox2.BeginUpdate();
 
-            string strTest;
-            string strTest1;
+            string strFirstName;
+            string strLastName;
 
             for (int iZaehler = 1; iZaehler <= col.Count; iZaehler++)
             {
@@ -115,16 +114,17 @@ namespace WindowsFormsApp1
                 NotesItem FirstName = doc.GetFirstItem("FirstName");
                 NotesItem LastName = doc.GetFirstItem("LastName");
 
-                strTest = FirstName.Text;
-                strTest1 = LastName.Text;
+                strFirstName = FirstName.Text;
+                strLastName = LastName.Text;
 
-                listBox2.Items.Add(strTest + " " + strTest1);
-
+                if (!String.IsNullOrEmpty(strFirstName))
+                {
+                    listBox2.Items.Add(strFirstName + " " + strLastName);
+                }
             }
 
             listBox2.EndUpdate();
-            
-            //
+
         }
 
         public void ControlSetFocus(Control control)
@@ -173,6 +173,25 @@ namespace WindowsFormsApp1
         private void ButtonSchliessen_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CheckBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                SortListBoxItems(ref listBox2, true);
+                checkBox2.Text = "Aufsteigend";
+            }
+            else
+            {
+                SortListBoxItems(ref listBox2, false);
+                checkBox2.Text = "Absteigend";
+            }
+        }
+
+        private void ButtonOutlook_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

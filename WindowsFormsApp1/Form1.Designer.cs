@@ -166,9 +166,11 @@
             this.buttonOutlook.TabIndex = 8;
             this.buttonOutlook.Text = "Outlook";
             this.buttonOutlook.UseVisualStyleBackColor = true;
+            this.buttonOutlook.Click += new System.EventHandler(this.ButtonOutlook_Click);
             // 
             // ButtonSchliessen
             // 
+            this.ButtonSchliessen.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ButtonSchliessen.Location = new System.Drawing.Point(7, 218);
             this.ButtonSchliessen.Name = "ButtonSchliessen";
             this.ButtonSchliessen.Size = new System.Drawing.Size(160, 23);
@@ -195,6 +197,7 @@
             this.checkBox2.TabIndex = 10;
             this.checkBox2.Text = "Sortierung Listbox";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -218,6 +221,7 @@
             // 
             // Form1
             // 
+            this.CancelButton = this.ButtonSchliessen;
             this.ClientSize = new System.Drawing.Size(808, 466);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
