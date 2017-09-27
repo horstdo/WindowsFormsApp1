@@ -161,7 +161,7 @@ namespace WindowsFormsApp1
             if (checkBox1.Checked)
             {
                 SortListBoxItems(ref listBox2, true);
-                checkBox1.Text = "Aufsteigend";
+                //checkBox1.Text = "Aufsteigend";
                 //kommentar test für github
             }
             else
