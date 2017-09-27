@@ -167,7 +167,7 @@ namespace WindowsFormsApp1
             {
                 SortListBoxItems(ref listBox2, false);
                 checkBox1.Text = "Absteigend";
-                //asdasdasd
+                
             }
         }
 
