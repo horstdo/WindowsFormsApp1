@@ -20,6 +20,7 @@ namespace WindowsFormsApp1.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
+
             }
         }
     }
