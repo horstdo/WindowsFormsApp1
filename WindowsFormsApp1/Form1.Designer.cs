@@ -43,10 +43,15 @@
             this.BTSchliessen = new System.Windows.Forms.Button();
             this.nOTESDATABASEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nOTESDATABASEBindingSource)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // BTListBoxFuellen
@@ -74,7 +79,7 @@
             this.textBox1.Location = new System.Drawing.Point(13, 19);
             this.textBox1.MaxLength = 20;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(373, 20);
+            this.textBox1.Size = new System.Drawing.Size(586, 20);
             this.textBox1.TabIndex = 2;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox1_KeyDown);
             // 
@@ -84,7 +89,7 @@
             this.listBox1.Location = new System.Drawing.Point(13, 43);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1.Size = new System.Drawing.Size(373, 82);
+            this.listBox1.Size = new System.Drawing.Size(586, 82);
             this.listBox1.TabIndex = 3;
             // 
             // groupBox1
@@ -92,7 +97,7 @@
             this.groupBox1.Controls.Add(this.BTListBoxTextAnhaengen);
             this.groupBox1.Controls.Add(this.BTListBoxFuellen);
             this.groupBox1.Controls.Add(this.BTListBoxEintraegeLoeschen);
-            this.groupBox1.Location = new System.Drawing.Point(415, 12);
+            this.groupBox1.Location = new System.Drawing.Point(623, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(173, 108);
             this.groupBox1.TabIndex = 4;
@@ -115,7 +120,7 @@
             this.groupBox3.Controls.Add(this.listBox1);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(397, 160);
+            this.groupBox3.Size = new System.Drawing.Size(605, 160);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             // 
@@ -144,15 +149,15 @@
             // 
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(415, 120);
+            this.groupBox2.Location = new System.Drawing.Point(623, 120);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(174, 52);
+            this.groupBox2.Size = new System.Drawing.Size(174, 59);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             // 
             // BTSchliessen
             // 
-            this.BTSchliessen.Location = new System.Drawing.Point(421, 178);
+            this.BTSchliessen.Location = new System.Drawing.Point(6, 19);
             this.BTSchliessen.Name = "BTSchliessen";
             this.BTSchliessen.Size = new System.Drawing.Size(160, 23);
             this.BTSchliessen.TabIndex = 0;
@@ -163,27 +168,61 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(25, 241);
+            this.listBox2.Location = new System.Drawing.Point(13, 16);
             this.listBox2.Name = "listBox2";
             this.listBox2.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox2.Size = new System.Drawing.Size(556, 251);
+            this.listBox2.Size = new System.Drawing.Size(586, 251);
             this.listBox2.TabIndex = 9;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(13, 273);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(110, 17);
+            this.checkBox2.TabIndex = 10;
+            this.checkBox2.Text = "Sortierung Listbox";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.listBox2);
+            this.groupBox4.Controls.Add(this.checkBox2);
+            this.groupBox4.Location = new System.Drawing.Point(12, 178);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(605, 298);
+            this.groupBox4.TabIndex = 11;
+            this.groupBox4.TabStop = false;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.BTSchliessen);
+            this.groupBox5.Location = new System.Drawing.Point(622, 211);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(166, 104);
+            this.groupBox5.TabIndex = 12;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "groupBox5";
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(601, 502);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.BTSchliessen);
+            this.ClientSize = new System.Drawing.Size(808, 502);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nOTESDATABASEBindingSource)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -203,6 +242,9 @@
         private System.Windows.Forms.Button BTSchliessen;
         private System.Windows.Forms.BindingSource nOTESDATABASEBindingSource;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }
 
