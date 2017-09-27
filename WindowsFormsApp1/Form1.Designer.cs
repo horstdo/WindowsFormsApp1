@@ -30,6 +30,7 @@
     private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.BTListBoxFuellen = new System.Windows.Forms.Button();
             this.BTListBoxEintraegeLoeschen = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -40,7 +41,8 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BTSchliessen = new System.Windows.Forms.Button();
+            this.buttonOutlook = new System.Windows.Forms.Button();
+            this.ButtonSchliessen = new System.Windows.Forms.Button();
             this.nOTESDATABASEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -137,7 +139,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 19);
+            this.button1.Location = new System.Drawing.Point(7, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 23);
             this.button1.TabIndex = 7;
@@ -148,6 +150,7 @@
             // groupBox2
             // 
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox2.Controls.Add(this.buttonOutlook);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Location = new System.Drawing.Point(623, 120);
             this.groupBox2.Name = "groupBox2";
@@ -155,15 +158,24 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             // 
-            // BTSchliessen
+            // buttonOutlook
             // 
-            this.BTSchliessen.Location = new System.Drawing.Point(7, 218);
-            this.BTSchliessen.Name = "BTSchliessen";
-            this.BTSchliessen.Size = new System.Drawing.Size(160, 23);
-            this.BTSchliessen.TabIndex = 0;
-            this.BTSchliessen.Text = "Schliessen";
-            this.BTSchliessen.UseVisualStyleBackColor = true;
-            this.BTSchliessen.Click += new System.EventHandler(this.BTSchliessen_Click);
+            this.buttonOutlook.Location = new System.Drawing.Point(7, 49);
+            this.buttonOutlook.Name = "buttonOutlook";
+            this.buttonOutlook.Size = new System.Drawing.Size(159, 23);
+            this.buttonOutlook.TabIndex = 8;
+            this.buttonOutlook.Text = "Outlook";
+            this.buttonOutlook.UseVisualStyleBackColor = true;
+            // 
+            // ButtonSchliessen
+            // 
+            this.ButtonSchliessen.Location = new System.Drawing.Point(7, 218);
+            this.ButtonSchliessen.Name = "ButtonSchliessen";
+            this.ButtonSchliessen.Size = new System.Drawing.Size(160, 23);
+            this.ButtonSchliessen.TabIndex = 0;
+            this.ButtonSchliessen.Text = "Schliessen";
+            this.ButtonSchliessen.UseVisualStyleBackColor = true;
+            this.ButtonSchliessen.Click += new System.EventHandler(this.ButtonSchliessen_Click);
             // 
             // listBox2
             // 
@@ -196,7 +208,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.BTSchliessen);
+            this.groupBox5.Controls.Add(this.ButtonSchliessen);
             this.groupBox5.Location = new System.Drawing.Point(622, 211);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(175, 250);
@@ -212,6 +224,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -239,12 +252,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button BTSchliessen;
+        private System.Windows.Forms.Button ButtonSchliessen;
         private System.Windows.Forms.BindingSource nOTESDATABASEBindingSource;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button buttonOutlook;
     }
 }
 

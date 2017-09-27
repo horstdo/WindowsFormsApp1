@@ -170,7 +170,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void BTSchliessen_Click(object sender, EventArgs e)
+        private void ButtonSchliessen_Click(object sender, EventArgs e)
         {
             this.Close();
         }
