@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Security.Principal;
 using Domino;
+using Outlook = Microsoft.Office.Interop.Outlook;
 
 namespace WindowsFormsApp1
 {
@@ -185,6 +186,22 @@ namespace WindowsFormsApp1
         private void ButtonOutlook_Click(object sender, EventArgs e)
         {
 
+
+            Outlook.Application o = new Outlook.Application();
+            Outlook._NameSpace ns = (Outlook._NameSpace)o.GetNamespace("MAPI");
+            Outlook.MAPIFolder f = ns.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox);
+
+            listBox1.Items.Clear();
+
+            foreach (var item in f.Items)
+            {
+                Outlook.MailItem mail = item as Outlook.MailItem;
+                if (mail != null)
+                {
+                    listBox1.Items.Add(mail.Subject);
+                }
+            }
+            
         }
 
         private void UpdateProgressBar(int intMinimum , int intMaximum , int intStep)
