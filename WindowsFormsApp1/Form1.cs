@@ -25,14 +25,17 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
             Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity("Fred"), new string[] { Roles.Administrator });
-//            DeleteDatabase(); // fine
+            //            DeleteDatabase(); // fine
             Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity("Barney"), new string[] { });
         }
 
         private void BTListBoxFuellen_Click(object sender, EventArgs e)
         {
 
+            listBox1.Items.Clear();
+
             listBox1.BeginUpdate();
+
             // Loop through and add 50 items to the ListBox.
             for (int x = 1; x <= 50; x++)
             {
@@ -53,12 +56,12 @@ namespace WindowsFormsApp1
             }
 
         }
-        
+
         private void BTListBoxTextAnhaengen_Click(object sender, EventArgs e)
         {
             string a = textBox1.Text;
 
-            if ( !a.Equals(""))
+            if (!a.Equals(""))
             {
                 listBox1.BeginUpdate();
                 listBox1.Items.Add(textBox1.Text);
@@ -77,6 +80,9 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             // MessageBox.Show("Form wird geladen", "Info", MessageBoxButtons.OK);
+
+            radioButton1.PerformClick();
+
         }
 
         private void SortListBoxItems(ref ListBox lb, bool ascending)
@@ -93,14 +99,18 @@ namespace WindowsFormsApp1
         private void BTNotes_Click(object sender, EventArgs e)
         {
 
+            listBox1.Items.Clear();
+            label1.Text = "";
+            UpdateProgressBar(0, 1, 1);
+
             NotesSession session = new NotesSession();
             session.Initialize("");
 
-            NotesDatabase db = session.GetDatabase("eva/mpreis", "names.nsf"  );
+            NotesDatabase db = session.GetDatabase("eva/mpreis", "names.nsf");
             NotesView view = db.GetView("x");
             NotesViewEntryCollection col = view.AllEntries;
 
-            listBox2.BeginUpdate();
+            listBox1.BeginUpdate();
 
             string strFirstName;
             string strLastName;
@@ -119,11 +129,13 @@ namespace WindowsFormsApp1
 
                 if (!String.IsNullOrEmpty(strFirstName))
                 {
-                    listBox2.Items.Add(strFirstName + " " + strLastName);
+                    listBox1.Items.Add(strFirstName + " " + strLastName);
                 }
+
+                UpdateProgressBar(1, col.Count, 1);
             }
 
-            listBox2.EndUpdate();
+            listBox1.EndUpdate();
 
         }
 
@@ -139,7 +151,7 @@ namespace WindowsFormsApp1
         private void TextBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-            { 
+            {
                 string a = textBox1.Text;
 
                 if (!a.Equals(""))
@@ -148,7 +160,7 @@ namespace WindowsFormsApp1
                     listBox1.Items.Add(textBox1.Text);
                     listBox1.EndUpdate();
                     textBox1.Clear();
-                                       
+
                 }
 
                 ControlSetFocus(textBox1);
@@ -170,28 +182,41 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void ButtonOutlook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateProgressBar(int intMinimum , int intMaximum , int intStep)
+        {
+            progressBar1.Minimum = intMinimum;
+            progressBar1.Maximum = intMaximum;
+            progressBar1.Step = intStep;
+            progressBar1.PerformStep();
+            label1.Text = progressBar1.Value.ToString() + " Listeneinträge";
+        }
+
+        // Buttons
+
+        private void ButtonAlleLoeschen_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void ButtonSchliessen_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void CheckBox2_CheckedChanged(object sender, EventArgs e)
+        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox2.Checked)
-            {
-                SortListBoxItems(ref listBox2, true);
-                checkBox2.Text = "Aufsteigend";
-            }
-            else
-            {
-                SortListBoxItems(ref listBox2, false);
-                checkBox2.Text = "Absteigend";
-            }
+            SortListBoxItems(ref listBox1, true);
         }
 
-        private void ButtonOutlook_Click(object sender, EventArgs e)
+        private void RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
-
+            SortListBoxItems(ref listBox1, false);
         }
     }
+
 }
