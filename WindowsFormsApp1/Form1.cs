@@ -100,9 +100,11 @@ namespace WindowsFormsApp1
         private void BTNotes_Click(object sender, EventArgs e)
         {
 
+
             listBox1.Items.Clear();
-            label1.Text = "";
-            UpdateProgressBar(0, 1, 1);
+            UpdateProgressBar(0, 0, 0);
+
+            label1.Text = progressBar1.Value.ToString() + " Listeneinträge";
 
             NotesSession session = new NotesSession();
             session.Initialize("");
@@ -137,6 +139,8 @@ namespace WindowsFormsApp1
             }
 
             listBox1.EndUpdate();
+
+            label1.Text = progressBar1.Value.ToString() + " Listeneinträge";
 
         }
 
@@ -186,7 +190,6 @@ namespace WindowsFormsApp1
         private void ButtonOutlook_Click(object sender, EventArgs e)
         {
 
-
             Outlook.Application o = new Outlook.Application();
             Outlook._NameSpace ns = (Outlook._NameSpace)o.GetNamespace("MAPI");
             Outlook.MAPIFolder f = ns.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox);
@@ -195,13 +198,12 @@ namespace WindowsFormsApp1
 
             foreach (var item in f.Items)
             {
-                Outlook.MailItem mail = item as Outlook.MailItem;
-                if (mail != null)
+                if (item is Outlook.MailItem mail)
                 {
                     listBox1.Items.Add(mail.Subject);
                 }
             }
-            
+
         }
 
         private void UpdateProgressBar(int intMinimum , int intMaximum , int intStep)
@@ -210,7 +212,6 @@ namespace WindowsFormsApp1
             progressBar1.Maximum = intMaximum;
             progressBar1.Step = intStep;
             progressBar1.PerformStep();
-            label1.Text = progressBar1.Value.ToString() + " Listeneinträge";
         }
 
         // Buttons
@@ -234,6 +235,7 @@ namespace WindowsFormsApp1
         {
             SortListBoxItems(ref listBox1, false);
         }
+       
     }
 
 }
